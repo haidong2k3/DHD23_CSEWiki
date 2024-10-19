@@ -49,6 +49,7 @@ git commit -am "Commit title"
 
 ### Commit history
 git log
+git log --
 git log --pretty=oneline
 
 ### Checking out previous commits
@@ -84,10 +85,33 @@ git branch -D <branch_name> (force deletion for branch hasn't been merged - use 
 
 ### Completely return to the previous state 
 (Return to the earlier commit as the normal state)
-git reset --hard <first_6_chars_of_commit_ID>
+- git reset => delete commit history
+git reset --hard <commit_hash> (commit_hash: first_6_chars_of_commit_ID)
+git push <remote_name> <branch_name> --force (update commit history on remote after reset)
+- git revert => keep commit history
+git revert <commit_hash>
 
 ### Delete repository of the project
 rm -rf .git/ (recheck by git status)
+
+### Stash
+git stash
+git stash list
+git stash --keep-index
+git stash apply (lay cac change ra nhung van giu trong stash)
+git stash pop (lay cac change ra va xoa trong stash)
+
+### Stash flow
+git stash 
+=> git checkout <branch_name> 
+=> doing tasks 
+=> git checkout <prev_branch_name>
+=> git stash pop
+
+### Delete stash
+Delete specific stash: git stash drop stash@{n}.
+Delete newest stash: git stash drop.
+Delete all stash: git stash clear.
 
 ### Remote repository
 git remote

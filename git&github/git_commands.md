@@ -30,6 +30,7 @@ put all the file name that need ignore into this file
 EX: filename: .gitignore
 __pycache__/ (for python program)
 .DS_Store (for MacOS env)
+use this "/" to ignore a folder
 
 ### initialize
 git init
